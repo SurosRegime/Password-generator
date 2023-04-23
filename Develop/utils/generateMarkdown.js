@@ -53,6 +53,7 @@ function generateMarkdown({title, description, installation, usage, license, con
   - [License](#license)
   - [Contributions](#contributing)
   - [Tests](#tests)
+  - [Questions](#questions)
 
   ## Installation
     ${installation}
@@ -67,8 +68,12 @@ function generateMarkdown({title, description, installation, usage, license, con
     ${contributing}
   ## Tests
     ${tests}
-  ## Contact
+  ## Questions
+    If you would like to contact me with any questions you may have, reach out to me via:
 
+    Github: ${renderGithubUrl(username)}
+
+    Email: ${email}`
 `;
 }
 
