@@ -71,7 +71,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-    const fileName = `./output/MADE_README.md`
+    const fileName = `./output/README.md`
     fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log("Success!"));
 }

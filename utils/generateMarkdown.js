@@ -17,26 +17,27 @@ if (license === null){
 }
 
 function renderGithubUrl(username){
-  if (username === null){
+  if (username === null || username === undefined){
     username = '';
   } else {
     return `[${username}](https://github.com/${username})`
   }
-  
 }
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === null){
-    license = '';
+  if (license === null || license === undefined){
+    return ``;
   } else {
-  return ` Read more about ${license} by clicking `
+    return `Read more about ${license} by clicking ${renderLicenseLink(license)}.`
   }
 }
 
+
 // TODO: Create a function to generate markdown for README
-function generateMarkdown({title, description, installation, usage, license, contributing, tests}) {
+function generateMarkdown({title, description, installation, usage, license, contributing, tests, questions, username, email}) {
   return `# ${title}
   
   ## Badge  
@@ -69,6 +70,7 @@ function generateMarkdown({title, description, installation, usage, license, con
   ## Tests
     ${tests}
   ## Questions
+      ${questions}
     If you would like to contact me with any questions you may have, reach out to me via:
 
     Github: ${renderGithubUrl(username)}
